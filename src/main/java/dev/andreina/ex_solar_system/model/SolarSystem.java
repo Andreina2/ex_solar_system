@@ -19,7 +19,7 @@ public class SolarSystem {
     private boolean observableToSimpleView= false;
 
 // constructor
-public SolarSystem(String name, int numberOfSatellites, double massInKg, double volumeInCubicKm, int diameterInKm,
+    public SolarSystem(String name, int numberOfSatellites, double massInKg, double volumeInCubicKm, int diameterInKm,
         int avgDistanceToSunInMillionsOfKm, TypeOfPlanet tyOfPlanet, boolean observableToSimpleView) {
     this.name = name;
     this.numberOfSatellites = numberOfSatellites;
@@ -30,6 +30,21 @@ public SolarSystem(String name, int numberOfSatellites, double massInKg, double 
     this.tyOfPlanet = tyOfPlanet;
     this.observableToSimpleView = observableToSimpleView;
 }
+
+    // 1 metodo obtener atributos de un planeta
+    public String giveResults() {
+        return "Planet: " + name +
+                "\nNumber of Satellites: " + numberOfSatellites +
+                "\nMass: " + massInKg + " kg" +
+                "\nVolume: " + volumeInCubicKm + " km³" +
+                "\nDiameter: " + diameterInKm + " km" +
+                "\nAverage Distance to sun: " + avgDistanceToSunInMillionsOfKm + " millions of kilometers" +
+                "\nType of planet: " + tyOfPlanet +
+                "\nObservable to simple view: " + observableToSimpleView;
+
+    }
+
+
 
 
 }
