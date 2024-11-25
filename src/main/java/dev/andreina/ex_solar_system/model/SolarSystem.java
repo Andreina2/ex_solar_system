@@ -8,6 +8,8 @@ public class SolarSystem {
     private double volumeInCubicKm= 0;
     private int diameterInKm= 0;
     private int avgDistanceToSunInMillionsOfKm= 0;
+    private int orbitalPeriod;
+    private int rotationPeriod;
 
 
     public enum TypeOfPlanet{
@@ -20,7 +22,7 @@ public class SolarSystem {
 
 // constructor
     public SolarSystem(String name, int numberOfSatellites, double massInKg, double volumeInCubicKm, int diameterInKm,
-    int avgDistanceToSunInMillionsOfKm, TypeOfPlanet tyOfPlanet, boolean observableToSimpleView) {
+    int avgDistanceToSunInMillionsOfKm, TypeOfPlanet tyOfPlanet, boolean observableToSimpleView, int orbitalPeriod, int rotationPeriod) {
         
     this.name = name;
     this.numberOfSatellites = numberOfSatellites;
@@ -30,6 +32,8 @@ public class SolarSystem {
     this.avgDistanceToSunInMillionsOfKm = avgDistanceToSunInMillionsOfKm;
     this.tyOfPlanet = tyOfPlanet;
     this.observableToSimpleView = observableToSimpleView;
+    this.orbitalPeriod= orbitalPeriod;
+    this.rotationPeriod= rotationPeriod;
 }
 
     // 1 metodo obtener atributos de un planeta
@@ -41,7 +45,10 @@ public class SolarSystem {
                 "\nDiameter: " + diameterInKm + " km" +
                 "\nAverage Distance to sun: " + avgDistanceToSunInMillionsOfKm + " millions of kilometers" +
                 "\nType of planet: " + tyOfPlanet +
-                "\nObservable to simple view: " + observableToSimpleView;
+                "\nObservable to simple view: " + observableToSimpleView +
+                "\nOrbital Period: " + orbitalPeriod  +  "years" +
+                "\nRotation Period: " + rotationPeriod  +  "days";
+
 
     }
     
