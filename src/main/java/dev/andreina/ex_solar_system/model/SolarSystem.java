@@ -10,7 +10,7 @@ public class SolarSystem {
     private int avgDistanceToSunInMillionsOfKm= 0;
 
 
-    private enum TypeOfPlanet{
+    public enum TypeOfPlanet{
         GASEOSO, TERRESTRE, ENANO
     }
 
