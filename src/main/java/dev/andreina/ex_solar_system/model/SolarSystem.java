@@ -10,7 +10,7 @@ public class SolarSystem {
     private int avgDistanceToSunInMillionsOfKm= 0;
 
 
-    private enum TypeOfPlanet{
+    public enum TypeOfPlanet{
         GASEOSO, TERRESTRE, ENANO
     }
 
@@ -19,8 +19,9 @@ public class SolarSystem {
     private boolean observableToSimpleView= false;
 
 // constructor
-public SolarSystem(String name, int numberOfSatellites, double massInKg, double volumeInCubicKm, int diameterInKm,
-        int avgDistanceToSunInMillionsOfKm, TypeOfPlanet tyOfPlanet, boolean observableToSimpleView) {
+    public SolarSystem(String name, int numberOfSatellites, double massInKg, double volumeInCubicKm, int diameterInKm,
+    int avgDistanceToSunInMillionsOfKm, TypeOfPlanet tyOfPlanet, boolean observableToSimpleView) {
+        
     this.name = name;
     this.numberOfSatellites = numberOfSatellites;
     this.massInKg = massInKg;
@@ -31,5 +32,36 @@ public SolarSystem(String name, int numberOfSatellites, double massInKg, double 
     this.observableToSimpleView = observableToSimpleView;
 }
 
+    // 1 metodo obtener atributos de un planeta
+    public String giveData() {
+        return "Planet: " + name +
+                "\nNumber of Satellites: " + numberOfSatellites + // \n salto de linea cada atributo en una nueva linea
+                "\nMass: " + massInKg + " kg" +
+                "\nVolume: " + volumeInCubicKm + " km³" +
+                "\nDiameter: " + diameterInKm + " km" +
+                "\nAverage Distance to sun: " + avgDistanceToSunInMillionsOfKm + " millions of kilometers" +
+                "\nType of planet: " + tyOfPlanet +
+                "\nObservable to simple view: " + observableToSimpleView;
+
+    }
+    
+    // 2 metodo Calcular la densidad del planeta, como el cociente entre su masa y su volumen.
+    public double calculateDensity() {
+        if (volumeInCubicKm > 0) {
+            return massInKg / volumeInCubicKm;
+        } else {
+            return 0;
+        }
+    }
+
+    // 3 metodo Determinar si un planeta del sistema solar se considera exterior.
+    public boolean isOutsidePlanet() {
+        double distanceInUA = avgDistanceToSunInMillionsOfKm / 149.597870; // convierte en UA
+        return distanceInUA > 3.4;
+    
+
 
 }
+
+}
+
