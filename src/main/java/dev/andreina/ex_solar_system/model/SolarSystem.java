@@ -34,7 +34,7 @@ public class SolarSystem {
     // 1 metodo obtener atributos de un planeta
     public String giveResults() {
         return "Planet: " + name +
-                "\nNumber of Satellites: " + numberOfSatellites +
+                "\nNumber of Satellites: " + numberOfSatellites + // \n salto de linea cada atributo en una nueva linea
                 "\nMass: " + massInKg + " kg" +
                 "\nVolume: " + volumeInCubicKm + " km³" +
                 "\nDiameter: " + diameterInKm + " km" +
@@ -43,8 +43,24 @@ public class SolarSystem {
                 "\nObservable to simple view: " + observableToSimpleView;
 
     }
+    
+    // 2 metodo Calcular la densidad del planeta, como el cociente entre su masa y su volumen.
+    public double calculateDensity() {
+        if (volumeInCubicKm > 0) {
+            return massInKg / volumeInCubicKm;
+        } else {
+            return 0;
+        }
+    }
 
-
+    // 3 metodo Determinar si un planeta del sistema solar se considera exterior.
+    public boolean isOutsidePlanet() {
+        double distanceInUA = avgDistanceToSunInMillionsOfKm / 149.597870; // convierte en UA
+        return distanceInUA > 3.4;
+    
 
 
 }
+
+}
+
