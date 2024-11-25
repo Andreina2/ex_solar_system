@@ -20,7 +20,8 @@ public class SolarSystem {
 
 // constructor
     public SolarSystem(String name, int numberOfSatellites, double massInKg, double volumeInCubicKm, int diameterInKm,
-        int avgDistanceToSunInMillionsOfKm, TypeOfPlanet tyOfPlanet, boolean observableToSimpleView) {
+    int avgDistanceToSunInMillionsOfKm, TypeOfPlanet tyOfPlanet, boolean observableToSimpleView) {
+        
     this.name = name;
     this.numberOfSatellites = numberOfSatellites;
     this.massInKg = massInKg;
@@ -32,7 +33,7 @@ public class SolarSystem {
 }
 
     // 1 metodo obtener atributos de un planeta
-    public String giveResults() {
+    public String giveData() {
         return "Planet: " + name +
                 "\nNumber of Satellites: " + numberOfSatellites + // \n salto de linea cada atributo en una nueva linea
                 "\nMass: " + massInKg + " kg" +
